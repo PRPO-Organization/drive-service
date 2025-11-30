@@ -1,0 +1,31 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: drive_request_postgres
+    environment:
+      POSTGRES_DB: drive_request_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5434:5432"
+    volumes:
+      - drive_request_data:/var/lib/postgresql/data
+
+  drive_request_service:
+    build: .
+    container_name: drive_request_service
+    depends_on:
+      - postgres
+    environment:
+      DB_URL: jdbc:postgresql://postgres:5432/drive_request_db
+      DB_USER: postgres
+      DB_PASSWORD: postgres
+      ACCOUNT_SERVICE_URL: http://account-management:8080
+      NOTIFY_SERVICE_URL: http://notifications:8080
+    ports:
+      - "8084:8080"
+
+volumes:
+  drive_request_data:

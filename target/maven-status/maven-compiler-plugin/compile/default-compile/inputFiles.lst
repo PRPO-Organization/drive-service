@@ -1,0 +1,9 @@
+/home/stefan/Faks/PRPO/prpodriverequest2/drive-request-service/src/main/java/com/skupina1/persistence/RideRepository.java
+/home/stefan/Faks/PRPO/prpodriverequest2/drive-request-service/src/main/java/com/skupina1/config/EntityManagerProducer.java
+/home/stefan/Faks/PRPO/prpodriverequest2/drive-request-service/src/main/java/com/skupina1/config/JaxRsApplication.java
+/home/stefan/Faks/PRPO/prpodriverequest2/drive-request-service/src/main/java/com/skupina1/model/RideRequest.java
+/home/stefan/Faks/PRPO/prpodriverequest2/drive-request-service/src/main/java/com/skupina1/entity/RideEntity.java
+/home/stefan/Faks/PRPO/prpodriverequest2/drive-request-service/src/main/java/com/skupina1/model/Notification.java
+/home/stefan/Faks/PRPO/prpodriverequest2/drive-request-service/src/main/java/com/skupina1/service/RideService.java
+/home/stefan/Faks/PRPO/prpodriverequest2/drive-request-service/src/main/java/com/skupina1/resource/RideResource.java
+/home/stefan/Faks/PRPO/prpodriverequest2/drive-request-service/src/main/java/com/skupina1/App.java

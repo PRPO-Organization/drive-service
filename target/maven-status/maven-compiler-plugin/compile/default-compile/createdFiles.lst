@@ -1,0 +1,9 @@
+com/skupina1/config/JaxRsApplication.class
+com/skupina1/App.class
+com/skupina1/resource/RideResource.class
+com/skupina1/persistence/RideRepository.class
+com/skupina1/entity/RideEntity.class
+com/skupina1/model/RideRequest.class
+com/skupina1/config/EntityManagerProducer.class
+com/skupina1/model/Notification.class
+com/skupina1/service/RideService.class

@@ -1,0 +1,14 @@
+curl -X POST http://localhost:8084/ride \
+  -H "Content-Type: application/json" \
+  -d '{
+        "driverId": 12,
+        "passengerId": 5,
+        "pickupLat": 41.995,
+        "pickupLng": 21.431,
+        "dropoffLat": 41.996,
+        "dropoffLng": 21.433
+      }'
+
+curl -X GET http://localhost:8084/ride/1
+
+curl -X PUT http://localhost:8084/ride/1/complete
