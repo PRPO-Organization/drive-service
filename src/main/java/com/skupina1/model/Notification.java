@@ -15,7 +15,7 @@ public class Notification {
         this.recipient = recipient;
         this.subject = subject;
         this.body = body;
-        this.createdAt = LocalDateTime.now();
+        //this.createdAt = LocalDateTime.now();
     }
 
     public int getId() {return this.id;}

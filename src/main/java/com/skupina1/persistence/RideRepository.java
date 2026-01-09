@@ -9,6 +9,9 @@ import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.Persistence;
 import jakarta.transaction.Transactional;
 
+import java.util.Collections;
+import java.util.List;
+
 public class RideRepository {
 
     EntityManagerFactory emf = Persistence.createEntityManagerFactory("drivePU");
@@ -37,6 +40,36 @@ public class RideRepository {
         }catch (Exception e){
             System.out.println("SQL exception: " + e);
             return null;
+        } finally {
+            if (em.isOpen()) em.close();
+        }
+    }
+
+    public List<RideEntity> findByDriverId(long driverId) {
+        EntityManager em = emf.createEntityManager();
+        try {
+            return em.createQuery(
+                            "SELECT r FROM RideEntity r WHERE r.driverId = :driverId", RideEntity.class)
+                    .setParameter("driverId", driverId)
+                    .getResultList();
+        } catch (Exception e) {
+            System.out.println("SQL exception: " + e);
+            return Collections.emptyList(); // return empty list on error
+        } finally {
+            if (em.isOpen()) em.close();
+        }
+    }
+
+    public List<RideEntity> findByPassenger(long passengerId) {
+        EntityManager em = emf.createEntityManager();
+        try {
+            return em.createQuery(
+                            "SELECT r FROM RideEntity r WHERE r.passengerId = :passengerId", RideEntity.class)
+                    .setParameter("passengerId", passengerId)
+                    .getResultList();
+        } catch (Exception e) {
+            System.out.println("SQL exception: " + e);
+            return Collections.emptyList(); // return empty list on error
         } finally {
             if (em.isOpen()) em.close();
         }

@@ -8,6 +8,8 @@ import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
+import java.util.List;
+
 @Path("/ride")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
@@ -37,6 +39,32 @@ public class RideResource {
                     .build();
 
         return Response.ok(ride).build();
+    }
+
+    @GET
+    @Path("/driver/{id}")
+    public Response getRideByDriverId(@PathParam("id") long id){
+        List<RideEntity> rides = service.findByDriverId(id);
+
+        if(rides == null)
+            return Response.status(Response.Status.NOT_FOUND)
+                    .entity("{\"message\":\"No ride by specified ID\"}")
+                    .build();
+
+        return Response.ok(rides).build();
+    }
+
+    @GET
+    @Path("/passenger/{id}")
+    public Response getRideByPassengerId(@PathParam("id") long id){
+        List<RideEntity> rides = service.findByPassengerId(id);
+
+        if(rides == null)
+            return Response.status(Response.Status.NOT_FOUND)
+                    .entity("{\"message\":\"No ride by specified ID\"}")
+                    .build();
+
+        return Response.ok(rides).build();
     }
 
     @PUT

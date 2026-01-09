@@ -1,8 +1,8 @@
 curl -X POST http://localhost:8084/ride \
   -H "Content-Type: application/json" \
   -d '{
-        "driverId": 12,
-        "passengerId": 5,
+        "driverId": 2,
+        "passengerId": 3,
         "pickupLat": 41.995,
         "pickupLng": 21.431,
         "dropoffLat": 41.996,
