@@ -1,5 +1,6 @@
 package com.skupina1;
 
+import com.skupina1.filter.CorsFilter;
 import com.skupina1.resource.RideResource;
 import jakarta.enterprise.inject.se.SeContainer;
 import jakarta.enterprise.inject.se.SeContainerInitializer;
@@ -14,13 +15,14 @@ public class App {
 
     public static void main(String[] args) {
 
-        ResourceConfig rc = new ResourceConfig().packages("com.skupina1.resource");
+        ResourceConfig rc = new ResourceConfig().packages("com.skupina1.resource")
+                .register(CorsFilter.class);
 
         HttpServer server = GrizzlyHttpServerFactory.createHttpServer(URI.create(BASE_URI), rc);
 
         try {
             server.start();
-            System.out.println("Notification service running at " + BASE_URI);
+            System.out.println("Ride service running at " + BASE_URI);
             Thread.currentThread().join(); // Keep main thread alive
         } catch (Exception e) {
             e.printStackTrace();
