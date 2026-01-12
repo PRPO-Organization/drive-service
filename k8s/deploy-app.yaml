@@ -18,6 +18,13 @@ spec:
         image: prporegistry.azurecr.io/drive-service:latest
         ports:
         - containerPort: 8080
+        env:
+        - name: JWT_TOKEN
+          valueFrom:
+            secretKeyRef:
+              name: auth-token-secret
+              key: JWT_TOKEN
+
       
 ---
 apiVersion: v1
