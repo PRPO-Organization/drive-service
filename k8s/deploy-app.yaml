@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: drive-service
+  namespace: prpo-microservices
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: drive-service
+  template:
+    metadata:
+      labels:
+        app: drive-service
+    spec:
+      containers:
+      - name: drive-service
+        image: prporegistry.azurecr.io/drive-service:latest
+        ports:
+        - containerPort: 8080
+      
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: drive-service
+  namespace: default
+spec:
+  type: ClusterIP
+  selector:
+    app: drive-service
+  ports:
+    - port: 8080
+      targetPort: 8080
+
+
+
+

@@ -14,7 +14,7 @@
         <properties>
             <!-- PostgreSQL connection for Docker -->
             <property name="jakarta.persistence.jdbc.driver" value="org.postgresql.Driver"/>
-            <property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://drive_request_postgres:5432/drive_request_db"/>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://ep-polished-silence-ad1ymgxw-pooler.c-2.us-east-1.aws.neon.tech/drives-db?user=neondb_owner&password=npg_PdOyU2Sg7fCn&sslmode=require&channelBinding=require"/>
             <property name="jakarta.persistence.jdbc.user" value="postgres"/>
             <property name="jakarta.persistence.jdbc.password" value="postgres"/>
 
