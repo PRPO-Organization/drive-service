@@ -29,7 +29,7 @@ public class RideService {
     private static final String TRANSACTIONS_URL = "http://9.235.137.130/api/transactions/fare";
     //private static final String SORT_DRIVERS_URL = "http://localhost:8084/";
 
-    private static final String token = "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbkB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc2Nzk3MDk0OSwiZXhwIjoxNzY4MDU3MzQ5fQ.bjbob2S4ssXYF7RsdisSJZwqaE2Tqaj_0p2yOTG9HeU-fkziP2LIjw5DVSKy8IbR";
+    private static final String token = System.getenv("JWT_TOKEN");
 
     private void getNewToken(){
 
