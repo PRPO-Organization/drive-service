@@ -73,4 +73,10 @@ public class RideResource {
         RideEntity r = service.completeRide(rideId);
         return Response.ok(r).build();
     }
+
+    @GET
+    @Path("/health-check")
+    public Response healthCheck(){
+        return Response.ok("{\"message\":\"Drive service is live.\"}").build();
+    }
 }
