@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: drive-service
-        image: prporegistry.azurecr.io/drive-service:accc4aafb3268a79513258f55c875c34253c988e
+        image: prporegistry.azurecr.io/drive-service:latest
         ports:
         - containerPort: 8080
         env:
